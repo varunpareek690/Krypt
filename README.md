@@ -1,0 +1,1 @@
+# This is a basic dApp to implement the functionalities of a smart contract and then interact with them using NEXT.js
