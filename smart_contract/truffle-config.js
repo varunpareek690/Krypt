@@ -40,8 +40,7 @@
 // const { MNEMONIC, PROJECT_ID } = process.env;
 
 const HDWalletProvider = require('@truffle/hdwallet-provider');
-const mnemonic = "charge strike manage injury suit evolve school pole half object diet boring";
-
+require('dotenv').config();
 
 module.exports = {
   /**
@@ -57,7 +56,7 @@ module.exports = {
   networks: {
     sepolia: {
       provider: function() {
-        return new HDWalletProvider(mnemonic, "https://sepolia.infura.io/v3/59aff5b12dea44bd8f2dd146f3db59db",1)
+        return new HDWalletProvider(process.env.MNEMONIC, "https://sepolia.infura.io/v3/" + process.env.PROJECT_ID,1)
       },
       network_id: 11155111,
     }
