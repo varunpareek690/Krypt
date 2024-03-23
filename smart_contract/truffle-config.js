@@ -1,10 +1,5 @@
 /**
- * Use this file to configure your truffle project. It's seeded with some
- * common settings for different networks and features like migrations,
- * compilation, and testing. Uncomment the ones you need or modify
- * them to suit your project as necessary.
- *
- * More information about configuration can be found at:
+ 
  *
  * https://trufflesuite.com/docs/truffle/reference/configuration
  *
@@ -44,7 +39,9 @@
 // require('dotenv').config();
 // const { MNEMONIC, PROJECT_ID } = process.env;
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+const mnemonic = "charge strike manage injury suit evolve school pole half object diet boring";
+
 
 module.exports = {
   /**
@@ -58,6 +55,12 @@ module.exports = {
    */
 
   networks: {
+    sepolia: {
+      provider: function() {
+        return new HDWalletProvider(mnemonic, "https://sepolia.infura.io/v3/59aff5b12dea44bd8f2dd146f3db59db",1)
+      },
+      network_id: 11155111,
+    }
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.
     // You should run a client (like ganache, geth, or parity) in a separate terminal
@@ -106,8 +109,8 @@ module.exports = {
   // Configure your compilers
   compilers: {
     solc: {
-      version: "0.8.21",      // Fetch exact version from solc-bin (default: truffle's version)
-      // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
+      version: "^0.8.0",      // Fetch exact version from solc-bin (default: truffle's version)
+      // docker: true,        // Use "0.5.1" y  ou've installed locally with docker (default: false)
       // settings: {          // See the solidity docs for advice about optimization and evmVersion
       //  optimizer: {
       //    enabled: false,
