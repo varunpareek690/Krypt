@@ -25,7 +25,7 @@ To get started with Krypt, follow these steps:
    ```
 2. Install dependencies:  
     ```bash
-    cd Krypt
+    cd client
     npm install
     ```
 
@@ -35,7 +35,7 @@ To get started with Krypt, follow these steps:
    npm run dev
    ```
 
-# This will start the development server and open Krypt in your default web browser.
+- This will start the development server and open Krypt in your default web browser.
    
 ## License
 - This project is licensed under the MIT License.
